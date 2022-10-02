@@ -1,0 +1,162 @@
+% xelatex
+\documentclass[letterpaper, 12pt]{article}
+
+%-----------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{libertinus}
+\usepackage[margin=1in]{geometry} % page layout
+\usepackage{graphicx} % put images
+\usepackage{amsmath} % Math support
+\usepackage{tabularx} % more flexible tables
+\usepackage{xeCJK} % Chinease, Japanese, and Korean encoding
+\usepackage[pdfauthor={Alpuds},
+            pdftitle={LaTeX Demonstration},
+            pdfkeywords={LaTeX math Japanese}]{hyperref} % have links as well as pdf metadata
+
+\setCJKmainfont{Noto Serif CJK JP}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+\newcommand{\q}[1]{``#1''} % macro for double quotes
+%-----------------------------------------
+
+\begin{document}
+\title{{\LaTeX} Demonstration}
+\author{Alpuds}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Learn \LaTeX}
+To learn \LaTeX, go to \href{https://www.overleaf.com/learn}{Overleaf}.
+
+\section{Math}
+\subsection{Percent error}
+\begin{equation}
+    \left|\frac{\text{accepted value} - \text{lab}}{\text{accepted value}}\right| \times 100 = \%\:\text{error}
+\end{equation}
+
+This formula is used to determine the percent error.
+With this, if the result is less than 10\%, then data recollection is not necessary.
+
+\subsection{5\% rule}
+\begin{equation}
+    \left|\frac{\text{y-int}}{\text{y-max}}\right| \times 100
+\end{equation}
+
+This formula is used to determine if the y-intercept is negligible.
+If the result is less than 5\%, then the y-intercept can be ignored.
+This is because the y-intercept is insignificant.
+If the result is greater than 5\%, then data recollection may be required.
+
+\subsection{Exponent to radical}
+\begin{equation}
+    5^\frac{4}{3} = \sqrt[3]{5^4}
+\end{equation}
+
+The 3 is the index, the 5 is the base, and the 4 is the exponent.
+
+\begin{equation}
+    8^\frac{9}{2} = \sqrt{8^9}
+\end{equation}
+
+In this example, the 2 is omitted in the square root because the root symbol by itself is understood to mean square root.
+
+\subsection{Functions}
+\subsubsection{Linear}
+\begin{equation}
+    f(x) = mx + b
+\end{equation}
+
+A linear function means the line goes in a constant rate, thus linear.
+$m$ is the rate, so the larger the number, the higher the rate of change is.
+$b$ is the y-intercept. This is basically the starting number when $x = 0$.
+
+\subsubsection{Exponential}
+\begin{equation}
+    f(x) = b^x
+\end{equation}
+
+Transformation: $g(x) = a(b)^{x-h} + k$
+
+When the equation has $-h$, then the number is the amount that the exponential equation moved right.
+A way to remember this is that it is the opposite of what you would think.
+So, $-$ means left which means the opposite is right.
+$+ k$ is the mount that the equation moved up.
+
+\subsubsection{Quadratic}
+\begin{equation}
+    f(x) = ax^2 + bx + c
+\end{equation}
+
+\section{Text formatting}
+This sentence has a \textbf{bold}, \textit{italic}, and \underline{underlined} text.
+
+\section{Lists}
+\subsection{Unordered list}
+The following is a list of visual novel game companies:
+\begin{itemize}
+    \item Type-Moon
+    \item Key
+    \item ASa Project
+    \item Nitro Plus
+    \item Frontwing
+\end{itemize}
+
+\subsection{Ordered list}
+
+The recommended route order in 月姫 (Tsukihime) is the following:
+\begin{enumerate}
+    \item アルクェイド (Arcueid)
+    \item シエル (Ciel)
+    \item 秋葉 (Akiha)
+    \item 翡翠 (Hisui)
+    \item 琥珀 (Kohaku)
+\end{enumerate}
+
+\subsection{Nested list}
+\begin{itemize}
+    \item{Key}
+    \begin{enumerate}
+        \item Clannad
+        \item リトルバスターズ！(Little Busters!)
+            \begin{itemize}
+                \item クドわふたー (Kud Wafter)
+            \end{itemize}
+        \item リライト (Rewrite)
+            \begin{itemize}
+                \item リライト ハーヴェストフェスタ! (Rewrite Harvest festa!)
+            \end{itemize}
+    \end{enumerate}
+    \item Type-Moon
+    \begin{enumerate}
+        \item Fate Stay/Night
+            \begin{itemize}
+                \item Fate/hollow ataraxia
+            \end{itemize}
+        \item 魔法使いの夜 (Mahoutsukai no Yoru; Which on the Holy Night)
+        \item 月姫 (Tsukihime; Moon Princess)
+            \begin{itemize}
+                \item 歌月十夜 (Kagetsu Tooya)
+            \end{itemize}
+    \end{enumerate}
+    \item Nitro Plus
+    \begin{enumerate}
+        \item Steins;Gate
+        \item 沙耶の唄 (Saya no Uta; Saya's Song)
+        \item 君と彼女と彼女の恋 (Kimi to Kanojo to Kanojo no koi; YOU and ME and HER)
+    \end{enumerate}
+\end{itemize}
+\section{Japanese}
+\begin{center}
+        これは日本語です。\footnote{日本語 means "Japanese language"}
+\end{center}
+The above Japanese text means \q{This is Japanese}.
+\end{document}
